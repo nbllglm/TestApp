@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<resources>
+
+
+    <declare-styleable name="commonTitleBar">
+
+
+        <attr name="title_style">
+
+            <enum name="noMore" value="0" />
+
+            <enum name="More" value="1" />
+
+        </attr>
+
+        <attr name="title_text" format="string">
+        </attr>
+
+    </declare-styleable>
+
+</resources>

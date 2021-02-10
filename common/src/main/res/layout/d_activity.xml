@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <gz.example.common.view.CommonTitleBar
+            android:id="@+id/tittle_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            app:title_text="D_strand" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/tittle_bar"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_A"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:onClick="@{()-> handle.goA()}"
+                android:text="跳转A" />
+
+            <TextView
+                android:id="@+id/tv_B"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:onClick="@{()-> handle.goB()}"
+                android:text="跳转B" />
+
+            <TextView
+                android:id="@+id/tv_C"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:onClick="@{()-> handle.goC()}"
+                android:text="跳转C" />
+
+            <TextView
+                android:id="@+id/tv_D"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:onClick="@{()-> handle.goD()}"
+                android:text="跳转D" />
+
+        </LinearLayout>
+
+
+
+    </RelativeLayout>
+
+    <data class="D_Binding">
+
+        <variable
+            name="handle"
+            type="gz.example.common.activity.ShowActivityD.ShowDHandler" />
+
+    </data>
+</layout>

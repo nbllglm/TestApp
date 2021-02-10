@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/startServiceA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="startServiceA" />
+
+        <TextView
+            android:id="@+id/stopServiceA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="stopServiceA" />
+
+        <TextView
+            android:id="@+id/startServiceB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="startServiceB" />
+
+        <TextView
+            android:id="@+id/stopServiceB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="stopServiceB" />
+
+        <TextView
+            android:id="@+id/bindServiceB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="bindServiceB" />
+
+        <TextView
+            android:id="@+id/unbindServiceB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="unbindServiceB" />
+
+        <TextView
+            android:id="@+id/bindServiceC"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="bindServiceC" />
+
+        <TextView
+            android:id="@+id/unbindServiceC"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="unbindServiceC" />
+
+        <TextView
+            android:id="@+id/startIntentService"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="startIntentService" />
+        <TextView
+            android:id="@+id/sendText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="sendText" />
+
+        <TextView
+            android:id="@+id/responseText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="" />
+
+    </LinearLayout>
+
+    <gz.example.common.view.CommonTitleBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title_text="serviceActivity" />
+
+</FrameLayout>

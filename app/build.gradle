@@ -1,0 +1,55 @@
+plugins {
+    id 'com.android.application'
+}
+
+def androidID = rootProject.ext.androidID
+def appID = rootProject.ext.appID
+def dependenciesID1 = rootProject.ext.dependenciesID1
+android {
+    compileSdkVersion androidID.compileSdkVersion
+    configurations {
+        cleanedAnnotations
+        compile.exclude group: 'org.jetbrains' , module:'annotations'
+    }
+
+    defaultConfig {
+        applicationId appID.app
+
+        minSdkVersion androidID.minSdkVersion
+        targetSdkVersion androidID.targetSdkVersion
+        versionCode androidID.versionCode
+        versionName androidID.versionName
+
+        testInstrumentationRunner androidID.testInstrumentationRunner
+        buildConfigField("boolean", "isrelease", String.valueOf(isRelease))
+
+    }
+
+
+    buildTypes {
+
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    buildFeatures{
+        dataBinding = true
+        // for view binding :
+        // viewBinding = true
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", includes: ["*.jar"])
+
+    if (isRelease) {
+        implementation project(':common')
+    }
+    dependenciesID1.each { k, v -> implementation v }
+
+
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+}

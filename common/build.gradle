@@ -1,0 +1,81 @@
+if (isRelease) {
+    apply plugin: 'com.android.library'
+} else {
+    apply plugin: 'com.android.application'
+}
+def appID = rootProject.ext.appID
+def androidID = rootProject.ext.androidID
+def dependenciesID1 = rootProject.ext.dependenciesID1
+def dependenciesID2 = rootProject.ext.dependenciesID2
+android {
+    compileSdkVersion androidID.compileSdkVersion
+
+    defaultConfig {
+        if (!isRelease) {
+            applicationId appID.common
+        }
+
+        minSdkVersion androidID.minSdkVersion
+        targetSdkVersion androidID.targetSdkVersion
+        versionCode androidID.versionCode
+        versionName androidID.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        debug {
+            buildConfigField("String", "TAG", "\"${TAG}\"")
+            buildConfigField("String", "activityTAG", "\"${activityTAG}\"")
+            buildConfigField("String", "serviceTAG", "\"${serviceTAG}\"")
+            buildConfigField("String", "broadcastTAG", "\"${broadcastTAG}\"")
+            buildConfigField("String", "fragmentTAG", "\"${fragmentTAG}\"")
+            buildConfigField("String", "viewTAG", "\"${viewTAG}\"")
+            buildConfigField("String", "buglyID", "\"${buglyID}\"")
+            buildConfigField("String", "buglyKEY", "\"${buglyKEY}\"")
+        }
+
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    sourceSets {
+        main {
+            if (!isRelease) {
+                manifest.srcFile 'src/main/debug/AndroidManifest.xml'
+            } else {
+                manifest.srcFile 'src/main/AndroidManifest.xml'
+                //去除测试代码不打包
+                java {
+                    exclude '**/debug/**'
+                }
+            }
+
+        }
+    }
+    buildFeatures{
+        dataBinding = true
+        // for view binding :
+        // viewBinding = true
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", includes: ["*.jar"])
+    implementation 'androidx.localbroadcastmanager:localbroadcastmanager:1.0.0'
+    implementation 'org.apache.commons:commons-lang3:3.7'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    dependenciesID1.each { k, v -> implementation v }
+    dependenciesID2.each { k, v -> implementation v }
+
+}

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<gz.example.common.view.CustomViewGroup xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <gz.example.common.view.CommonTitleBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title_text="viewactivity"/>
+
+    <gz.example.common.view.CustomView
+        android:id="@+id/customView2"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="100dp"
+        android:background="@color/black" />
+</gz.example.common.view.CustomViewGroup>
+
+

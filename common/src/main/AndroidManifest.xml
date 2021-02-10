@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="gz.example.common">
+
+    <application
+        android:name=".CommonApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MyApplication"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".activity.HomeActivity"
+            android:launchMode="singleTask">
+            <intent-filter>
+
+                <action android:name="gz.example.common.home" />
+                <action android:name="gz.example.common.page" />
+
+                <category android:name="gz.example.common.look1" />
+                <category android:name="gz.example.common.look2" />
+            </intent-filter>
+
+        </activity>
+        <activity android:name=".abs.AbsActivity" />
+
+        <activity
+            android:name=".activity.ShowActivityA"
+            android:launchMode="singleTop" />
+
+        <activity
+            android:name=".activity.ShowActivityB"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".activity.ShowActivityC"
+            android:launchMode="singleInstance" />
+        <activity
+            android:name=".activity.ShowActivityD"
+            android:launchMode="standard" />
+        <activity
+            android:name=".activity.ShowActivityE"
+            android:launchMode="standard" />
+        <activity
+            android:name=".activity.ShowActivityF"
+            android:launchMode="standard" />
+
+        <activity
+            android:name=".activity.RemoteActivity"
+            android:enabled="true"
+            android:exported="true"
+            android:launchMode="singleInstance"
+            android:process=":remoteActivity">
+
+        </activity>
+
+
+
+        <receiver
+            android:name=".receiver.FirstReceiver"
+            android:enabled="true">
+            <intent-filter android:priority="200">
+                <action android:name="gz.example.common.broad1" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".receiver.LiveReceiver"
+            android:enabled="true">
+            <intent-filter >
+                <action android:name="gz.example.common.broad2" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".receiver.SecondReceiver"
+            android:enabled="true">
+            <intent-filter android:priority="100">
+                <action android:name="gz.example.common.broad1" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".receiver.StickyBroadcastReceiver"
+            android:permission="gz.example.common.permission.sticky.receiver">
+
+            <intent-filter>
+                <action android:name="gz.example.common.stickybroad1" />
+            </intent-filter>
+
+        </receiver>
+        <service android:name=".abs.AbsService" />
+        <service android:name=".service.ShowServiceA" />
+        <service android:name=".service.ShowIntentService" />
+        <service android:name=".service.ShowServiceB" />
+
+        <service
+            android:name=".service.ShowServiceC"
+            android:enabled="true"
+            android:exported="true"
+            android:process=":serviceC" >
+
+            <intent-filter android:priority="1">
+                <action android:name="android.intent.action.ShowServiceC"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </service>
+
+
+
+    </application>
+    <permission
+        android:name="gz.example.common.permission.sticky.receiver"
+        android:protectionLevel="normal" />
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+
+    <!--    <uses-permission android:name="android.permission.READ_LOGS" />-->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <uses-permission android:name="gz.example.common.permission.sticky.receiver" />
+    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+</manifest>
