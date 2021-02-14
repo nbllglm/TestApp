@@ -22,7 +22,7 @@ public class AbsActivity extends AppCompatActivity {
     @Override
     protected void onRestart() {
         super.onRestart();
-        Log.i(TAG, getClass().getSimpleName() + "    onRestart: ");
+        Log.i(TAG, getClass().getSimpleName() + "     onRestart: ");
     }
 
     @Override
