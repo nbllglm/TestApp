@@ -10,6 +10,7 @@ interface IRemote {
      */
        void registerListener(in IBinder listener);
        void unregisterListener(in IBinder listener);
+       oneway void SerTestOneWay(in int[] pa);
        int SerTestIn(in int[] pa);
        int SerTestOut(out int[] pa);
        int SerTestInout(inout int[] pa);

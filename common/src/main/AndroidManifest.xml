@@ -91,10 +91,12 @@
         <service android:name=".service.ShowServiceA" />
         <service android:name=".service.ShowIntentService" />
         <service android:name=".service.ShowServiceB" />
+        <service android:name=".service.ShowMessengerService"
+            android:exported="true"
+            android:process=":serviceMessenger" />
 
         <service
             android:name=".service.ShowServiceC"
-            android:enabled="true"
             android:exported="true"
             android:process=":serviceC" >
 

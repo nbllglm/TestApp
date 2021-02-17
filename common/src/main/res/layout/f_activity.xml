@@ -65,25 +65,57 @@
             android:layout_marginTop="20dp"
             android:text="unbindServiceC" />
 
+
+        <TextView
+            android:id="@+id/sendCText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="sendCText" />
+
+        <TextView
+            android:id="@+id/responseCText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="" />
+
+
         <TextView
             android:id="@+id/startIntentService"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:text="startIntentService" />
+
         <TextView
-            android:id="@+id/sendText"
+            android:id="@+id/bindMessengerService"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="sendText" />
+            android:text="bindMessengerService" />
 
         <TextView
-            android:id="@+id/responseText"
+            android:id="@+id/unbindMessengerService"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="unbindMessengerService" />
+
+        <TextView
+            android:id="@+id/sendMessengerText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="sendMessengerText" />
+
+        <TextView
+            android:id="@+id/responseMessengerText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:text="" />
+
 
     </LinearLayout>
 

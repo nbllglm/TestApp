@@ -20,7 +20,6 @@ import gz.example.common.service.binder.BinderB;
 import gz.example.common.service.binder.BinderC;
 
 public class ShowServiceC extends AbsService {
-    private int id = 1;
 
     @Override
     public void onCreate() {
@@ -62,6 +61,7 @@ public class ShowServiceC extends AbsService {
      //   qiantai();
         Log.i(TAG, getClass().getSimpleName() + "    onStartCommand: ");
         return START_STICKY;
+
 //        return super.onStartCommand(intent, flags, startId);
     }
 

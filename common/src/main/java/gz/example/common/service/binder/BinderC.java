@@ -23,6 +23,12 @@ public class BinderC extends IRemote.Stub {
     }
 
     @Override
+    public void SerTestOneWay(int[] pa) throws RemoteException {
+        pa[0] = 999;
+        pa[1] = 888;
+    }
+
+    @Override
     public int SerTestIn(int[] pa) throws RemoteException {
         pa[0] = 999;
         pa[1] = 888;

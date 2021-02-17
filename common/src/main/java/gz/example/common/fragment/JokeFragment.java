@@ -58,6 +58,9 @@ public class JokeFragment extends AbsFragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+
+
+
         rvJoke = view.findViewById(R.id.rv_joke_list);
         rvJoke.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
         jokeAdapter = new JokeAdapter(jokes, getContext());
@@ -69,6 +72,9 @@ public class JokeFragment extends AbsFragment {
         jokes.clear();
         jokes.addAll(s2CJoke.getResult());
         jokeAdapter.notifyDataSetChanged();
+
+
+
 
 //        new OkUtil().setUrl("http://v.juhe.cn/joke/randJoke.php")
 //                .isPost()
@@ -90,6 +96,8 @@ public class JokeFragment extends AbsFragment {
 //                }).build();
 
 
+
+
     }
 
     public void qwe(String qwe) {
@@ -99,9 +107,9 @@ public class JokeFragment extends AbsFragment {
     @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
 //        super.onActivityResult(requestCode, resultCode, data);
-        if(resultCode == Activity.RESULT_OK){
-            if(requestCode==NewsFragment.REQUEST_CODE){
-                ToastUtil.Show(data.getIntExtra("key",0)+"");
+        if (resultCode == Activity.RESULT_OK) {
+            if (requestCode == NewsFragment.REQUEST_CODE) {
+                ToastUtil.Show(data.getIntExtra("key", 0) + "");
             }
         }
     }
