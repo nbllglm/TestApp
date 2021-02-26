@@ -159,7 +159,11 @@ public class NewsFragment extends AbsFragment implements View.OnClickListener {
             getTargetFragment().onActivityResult(REQUEST_CODE, Activity.RESULT_OK, intent);
 
         } else if (v.getId() == R.id.tv_anr) {
-
+            try {
+                Thread.sleep(1000000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
     }
 

@@ -193,8 +193,8 @@ public class HomeActivity extends AbsActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        unregisterReceiver(firstReceiver);
-        unregisterReceiver(secondReceiver);
+//        unregisterReceiver(firstReceiver);
+//        unregisterReceiver(secondReceiver);
         localBroadcastManager.unregisterReceiver(localReceiver);
         localBroadcastManager=null;
     }

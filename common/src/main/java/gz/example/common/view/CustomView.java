@@ -14,10 +14,13 @@ import androidx.annotation.Nullable;
 public class CustomView extends View {
     private float lastX = 0;
     private float lastY = 0;
-    private final String TAG="CustomView";
     private int count=0;
     public CustomView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
+//        setWillNotDraw(true);
+//        setVisibility(VISIBLE);
+//        setEnabled(true);
+//        setFocusable(true);
     }
 
 

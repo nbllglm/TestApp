@@ -67,33 +67,33 @@ public class JokeFragment extends AbsFragment {
         rvJoke.setAdapter(jokeAdapter);
 
 
-        String json = MMKVUtil.getInstance().getJsonData("json");
-        S2CJoke s2CJoke = new Gson().fromJson(json, S2CJoke.class);
-        jokes.clear();
-        jokes.addAll(s2CJoke.getResult());
-        jokeAdapter.notifyDataSetChanged();
+//        String json = MMKVUtil.getInstance().getJsonData("json");
+//        S2CJoke s2CJoke = new Gson().fromJson(json, S2CJoke.class);
+//        jokes.clear();
+//        jokes.addAll(s2CJoke.getResult());
+//        jokeAdapter.notifyDataSetChanged();
 
 
 
 
-//        new OkUtil().setUrl("http://v.juhe.cn/joke/randJoke.php")
-//                .isPost()
-//                .setParam("key", "33561c168fd782d595e4b5ba1bb85271")
-//                .setParam("page" ,"1")
-//                .setParam("pagesize","4")
-//                .setCallBack(new OkUtil.GzCallBack<S2CJoke>() {
-//                    @Override
-//                    public void success(S2CJoke s2CJoke) {
-//                        jokes.clear();
-//                        jokes.addAll(s2CJoke.getResult());
-//                        handler.post(new Runnable() {
-//                            @Override
-//                            public void run() {
-//                                jokeAdapter.notifyDataSetChanged();
-//                            }
-//                        });
-//                    }
-//                }).build();
+        new OkUtil().setUrl("http://v.juhe.cn/joke/randJoke.php")
+                .isPost()
+                .setParam("key", "33561c168fd782d595e4b5ba1bb85271")
+                .setParam("page" ,"1")
+                .setParam("pagesize","4")
+                .setCallBack(new OkUtil.GzCallBack<S2CJoke>() {
+                    @Override
+                    public void success(S2CJoke s2CJoke) {
+                        jokes.clear();
+                        jokes.addAll(s2CJoke.getResult());
+                        handler.post(new Runnable() {
+                            @Override
+                            public void run() {
+                                jokeAdapter.notifyDataSetChanged();
+                            }
+                        });
+                    }
+                }).build();
 
 
 
